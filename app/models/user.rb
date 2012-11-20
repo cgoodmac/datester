@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  username        :string(255)
+#  email           :string(255)
+#  photo_id        :integer
+#  age             :integer
+#  gender          :string(255)
+#  city            :string(255)
+#  state           :string(255)
+#  ethnicity       :string(255)
+#  description     :string(255)
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  password_digest :string(255)
+#
+
 class User < ActiveRecord::Base
   has_secure_password
 
@@ -7,7 +26,7 @@ class User < ActiveRecord::Base
   has_many :matches, :foreign_key => 'sender_id'
 
   validates :user_name, :presence => true
-  validates :password, :presence => true
+  
   validates :photo_id, :presence => true
   validates :age, :presence => true
   validates :gender, :presence => true
