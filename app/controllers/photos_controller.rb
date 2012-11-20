@@ -1,0 +1,12 @@
+class PhotosController < ApplicationController
+
+
+
+
+
+
+
+
+
+
+end
