@@ -11,6 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20121120213748) do
+=======
+ActiveRecord::Schema.define(:version => 20121120211029) do
+
+  create_table "matches", :force => true do |t|
+    t.boolean  "matched"
+    t.integer  "receiver_id"
+    t.integer  "sender_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+>>>>>>> f559978b5dd0e71ac1312e8ce3382de7d8948e4c
 
 end
