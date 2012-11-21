@@ -1,12 +1,17 @@
 Datester::Application.routes.draw do
 
-  
+  resources :home
   resources :users
   resources :messages
   resources :photos
   resources :matches
   resources :questions
   resources :answers
+  resources :dashboard
+
+  match '/login' => 'session#new', :via => :get
+  match '/login' => 'session#create', :via => :post
+  match '/logout' => 'session#destroy', :via => :get
 
 
   # The priority is based upon order of creation:
@@ -58,7 +63,7 @@ Datester::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 

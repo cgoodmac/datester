@@ -1,0 +1,6 @@
+<% @messages.each do |message| %>
+  <div>From: <%= message.sender %></div>
+  <div>Subject: <%= message.subject %></div>
+  <div>Message:</div>
+  <div><%= message.content %></div>
+<% end %>
