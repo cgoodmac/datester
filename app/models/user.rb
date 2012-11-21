@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
 
   validates :username, :presence => true
   
-  validates :photo_id, :presence => true
+  # validates :photo_id, :presence => true
   validates :age, :presence => true
   validates :gender, :presence => true
   validates :city, :presence => true
