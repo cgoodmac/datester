@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(:version => 20121121034359) do
   end
 
   create_table "messages", :force => true do |t|
-    t.string   "sender"
-    t.string   "recipient"
+    t.integer  "sender"
+    t.integer  "recipient"
     t.string   "subject"
     t.text     "content"
     t.datetime "created_at", :null => false
