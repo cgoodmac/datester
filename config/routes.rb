@@ -1,6 +1,6 @@
 Datester::Application.routes.draw do
 
-  
+  resources :home
   resources :users
   resources :messages
   resources :photos

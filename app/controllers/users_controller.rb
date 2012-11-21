@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       @user = User.new(params[:user])
 
       if @user.save
-        redirect_to users_path
+        redirect_to home_index_path
       else
         render :new
       end
@@ -46,6 +46,6 @@ class UsersController < ApplicationController
 
   # private
   # def ensure_logged_in
-  #     redirect_to root_path if @auth.nil?
-  # end
+  #      redirect_to root_path if @auth.nil?
+  #  end
 end
