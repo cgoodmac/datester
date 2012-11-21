@@ -37,5 +37,12 @@ class User < ActiveRecord::Base
   # validates :ethnicity, :presence => true
   # validates :description, :presence => true
 
+  def self.search(search)
+  if search
+    find(:all, :conditions => ['username like ?', "%#{search}%"])
+  else
+    find(:all)
+  end
+end
   
 end
