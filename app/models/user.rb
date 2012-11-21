@@ -26,8 +26,8 @@ class User < ActiveRecord::Base
   has_many :intiated, :class_name => 'Match', :foreign_key => 'sender_id'
   has_many :received, :class_name => 'Match', :foreign_key => 'receiver_id'
 
+
   validates :username, :presence => true
-  
   # validates :photo_id, :presence => true
   validates :age, :presence => true
   validates :gender, :presence => true
