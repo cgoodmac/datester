@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20121120232427) do
 
   create_table "users", :force => true do |t|
     t.string   "username"
+    t.string   "email"
     t.integer  "photo_id"
     t.integer  "age"
     t.string   "gender"
