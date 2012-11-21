@@ -17,13 +17,8 @@ class PhotosController < ApplicationController
 	end
 
 	def create
-		@photo = Photo.new(params[:photo])
-		if @photo.save
-			redirect_to photos_path
-		else 
-			render :new
-			# stay on the form page
-		end
+		@auth.photos << Photo.create(params[:photo])
+		redirect_to photos_path
 	end
 
 	def primary
