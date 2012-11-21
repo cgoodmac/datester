@@ -3,7 +3,7 @@ This is the dasboard page.  It should be personal to each person.
 <% if @auth %>
   <div>Welcome <%= @auth[:username] %></div>
 
-  <div>Photo: <%= image_tag @auth[:photo_id] %>
+  <div>Photo: <%= image_tag @auth[:photo_id] %></div>
   <div>Email: <%= @auth[:email] %></div>
   <div>Age <%= @auth[:age] %></div>
   <div>Gender <%= @auth[:gender] %></div>
@@ -17,6 +17,11 @@ This is the dasboard page.  It should be personal to each person.
   <% else %>
     <div>You have no new messages<div>
   <% end %>
+
+  <div class="photo1">
+    Add photos to your profile!
+    <%= link_to "New Photo", new_photo_path %>
+  </div>
 
   <div>Search for new dates</div>
 
