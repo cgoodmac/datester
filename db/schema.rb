@@ -11,41 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121120210905) do
+ActiveRecord::Schema.define(:version => 20121120232427) do
 
-  create_table "albums", :force => true do |t|
-    t.string   "name"
-    t.string   "photo"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "albums_songs", :force => true do |t|
-    t.integer "album_id"
-    t.integer "song_id"
-  end
-
-  create_table "artists", :force => true do |t|
-    t.string   "name"
-    t.string   "photo"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "artists_songs", :force => true do |t|
-    t.integer "artist_id"
-    t.integer "song_id"
-  end
-
-  create_table "genres", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "genres_songs", :force => true do |t|
-    t.integer "genre_id"
-    t.integer "song_id"
+  create_table "matches", :force => true do |t|
+    t.boolean  "matched"
+    t.integer  "receiver_id"
+    t.integer  "sender_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "messages", :force => true do |t|
