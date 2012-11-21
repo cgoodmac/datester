@@ -10,7 +10,7 @@ Datester::Application.routes.draw do
   resources :dashboard
 
   match '/login' => 'session#new', :via => :get
-  match '/login' => 'session#create', :via => :post
+  match '/root' => 'session#create', :via => :post
   match '/logout' => 'session#destroy', :via => :get
 
 
@@ -63,7 +63,7 @@ Datester::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'home#index'
+  root :to => 'session#new'
 
   # See how all your routes lay out with "rake routes"
 

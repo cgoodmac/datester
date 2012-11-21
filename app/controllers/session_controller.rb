@@ -7,7 +7,7 @@ class SessionController < ApplicationController
         user = User.find_by_username(params[:username])
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id
-            redirect_to dashboard_index_path
+            redirect_to dashboard_index_path(user)
         else
             render :new #this is the new.html.erb page
         end

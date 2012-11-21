@@ -23,19 +23,18 @@ class User < ActiveRecord::Base
   has_many :photos
   has_many :questions
   has_many :messages
-  #has_many :matches, :foreign_key => 'sender_id'
-  #has_many :initiated, :class_name => 'Match', :foreign_key => 'sender_id'
-  #has_many :received, :class_name => 'Match', :foreign_key => 'receiver_id'
+  has_many :intiated, :class_name => 'Match', :foreign_key => 'sender_id'
+  has_many :received, :class_name => 'Match', :foreign_key => 'receiver_id'
+
 
   validates :username, :presence => true
-  
   # validates :photo_id, :presence => true
-  validates :age, :presence => true
-  validates :gender, :presence => true
-  validates :city, :presence => true
-  validates :state, :presence => true
-  validates :ethnicity, :presence => true
-  validates :description, :presence => true
+  # validates :age, :presence => true
+  # validates :gender, :presence => true
+  # validates :city, :presence => true
+  # validates :state, :presence => true
+  # validates :ethnicity, :presence => true
+  # validates :description, :presence => true
 
   
 end
