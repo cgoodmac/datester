@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       @user = User.new(params[:user])
 
       if @user.save
-        redirect_to dashboard_index_path
+        redirect_to edit_user_path
       else
         render :new
       end
