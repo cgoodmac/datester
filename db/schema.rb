@@ -38,4 +38,19 @@ ActiveRecord::Schema.define(:version => 20121121013816) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "users", :force => true do |t|
+    t.string   "username"
+    t.string   "email"
+    t.integer  "photo_id"
+    t.integer  "age"
+    t.string   "gender"
+    t.string   "city"
+    t.string   "state"
+    t.string   "ethnicity"
+    t.string   "description"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "password_digest"
+  end
+
 end

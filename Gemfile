@@ -7,6 +7,7 @@ gem 'fog'
 gem 'jquery-rails'
 gem 'pg'
 gem 'rmagick'
+gem 'bcrypt-ruby'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

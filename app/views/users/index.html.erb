@@ -1,0 +1,20 @@
+<h1>the current user is : <%= @authenticated_user.try(:username) %></h1>
+
+Index
+<% @users.each do |user| %>
+  
+    <p><%= user.username %></p>
+    <p><%= user.email %></p>
+    <p><%= user.age %></p>
+    <p><%= user.gender %></p>
+    <p><%= user.city %></p>
+    <p><%= user.state %></p>
+    <p><%= user.ethnicity %></p>
+    <p><%= user.description %></p>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+<% end %>
+<br />
+<%= link_to 'New User', new_user_path %>

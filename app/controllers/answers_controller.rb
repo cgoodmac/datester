@@ -41,5 +41,4 @@ class AnswersController < ApplicationController
     redirect_to answers_path
   end
 
-
 end
