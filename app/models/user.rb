@@ -23,7 +23,9 @@ class User < ActiveRecord::Base
   has_many :photos
   has_many :questions
   has_many :messages
-  has_many :matches, :foreign_key => 'sender_id'
+  #has_many :matches, :foreign_key => 'sender_id'
+  #has_many :initiated, :class_name => 'Match', :foreign_key => 'sender_id'
+  #has_many :received, :class_name => 'Match', :foreign_key => 'receiver_id'
 
   validates :username, :presence => true
   
