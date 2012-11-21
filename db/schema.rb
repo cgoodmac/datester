@@ -11,7 +11,47 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121120223824) do
+ActiveRecord::Schema.define(:version => 20121121034359) do
+
+  create_table "matches", :force => true do |t|
+    t.boolean  "matched"
+    t.integer  "receiver_id"
+    t.integer  "sender_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "messages", :force => true do |t|
+    t.string   "sender"
+    t.string   "recipient"
+    t.string   "subject"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "photos", :force => true do |t|
+    t.string   "caption"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "image"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "username"
+    t.string   "email"
+    t.integer  "photo_id"
+    t.integer  "age"
+    t.string   "gender"
+    t.string   "city"
+    t.string   "state"
+    t.string   "ethnicity"
+    t.string   "description"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "password_digest"
+  end
 
   create_table "questions", :force => true do |t|
     t.datetime "created_at", :null => false

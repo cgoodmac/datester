@@ -1,0 +1,13 @@
+<h1>Photos</h1>
+<ul class="list">
+  <% @photos.each do |photo| %>
+    <div class="item">
+      <div class="photo">
+        <%= image_tag photo.image %>
+      </div>
+      <div class="caption">
+        <%= photo.caption %>
+      </div>
+    </div>
+  <% end %>
+</ul>
