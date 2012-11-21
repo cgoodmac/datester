@@ -9,5 +9,6 @@ class ApplicationController < ActionController::Base
     else
         @auth = nil
     end
+    rescue ActiveRecord::RecordNotFound
   end
 end

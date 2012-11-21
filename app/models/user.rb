@@ -20,6 +20,7 @@
 class User < ActiveRecord::Base
   has_secure_password
 
+  has_many :received, :class_name => 'Message', :foreign_key => 'recipient'
   has_many :photos
   has_many :questions
   has_many :messages
