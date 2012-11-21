@@ -1,12 +1,12 @@
 Datester::Application.routes.draw do
 
   
-  # resources :users
+  resources :users
   resources :messages
-  # resources :photos
-  # resources :matches
-  # resources :questions
-  # resources :answers
+  resources :photos
+  resources :matches
+  resources :questions
+  resources :answers
 
   match '/login' => 'session#new', :via => :get
   match '/login' => 'session#create', :via => :post
