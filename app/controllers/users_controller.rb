@@ -31,7 +31,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
 
       if @user.update_attributes(params[:user])
-        redirect_to @user
+        redirect_to dashboard_index_path
       else
         render :edit
       end
