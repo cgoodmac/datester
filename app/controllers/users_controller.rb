@@ -12,7 +12,9 @@ class UsersController < ApplicationController
       @user = User.new(params[:user])
 
       if @user.save
-        redirect_to edit_user_path
+
+        redirect_to edit_user_path(@user)
+
       else
         render :new
       end
@@ -31,7 +33,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
 
       if @user.update_attributes(params[:user])
-        redirect_to @user
+        redirect_to dashboard_index_path
       else
         render :edit
       end
