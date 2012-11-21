@@ -1,11 +1,11 @@
 Datester::Application.routes.draw do
   
-  resources :users
+  # resources :users
   resources :messages
-  resources :photos
-  resources :matches
-  resources :questions
-  resources :answers
+  # resources :photos
+  # resources :matches
+  # resources :questions
+  # resources :answers
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
