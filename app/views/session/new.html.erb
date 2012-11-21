@@ -1,4 +1,4 @@
-<%= form_tag '/login' do %>
+<%= form_tag '/root' do %>
     name:
     <%= text_field_tag 'username' %>
     pass:
@@ -6,4 +6,6 @@
     <%= submit_tag 'Login!' %>
 <% end %>
 
+
+<%= link_to "New Users", new_user_path %>
 
