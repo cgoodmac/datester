@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_filter :ensure_logged_in
+  #before_filter :ensure_logged_in
   def index
   end
 
@@ -20,8 +20,8 @@ class QuestionsController < ApplicationController
 
   def destroy
   end
-  private
-  def ensure_logged_in
-    redirect_to root_path if @auth.nil
-  end
+  # private
+  # def ensure_logged_in
+  #   redirect_to root_path if @auth.nil
+  # end
 end
