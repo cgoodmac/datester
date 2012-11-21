@@ -38,6 +38,12 @@ ActiveRecord::Schema.define(:version => 20121121034359) do
     t.string   "image"
   end
 
+  create_table "questions", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "username"
     t.string   "email"
@@ -51,12 +57,6 @@ ActiveRecord::Schema.define(:version => 20121121034359) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "password_digest"
-  end
-
-  create_table "questions", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "user_id"
   end
 
 end
