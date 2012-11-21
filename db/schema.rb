@@ -30,6 +30,14 @@ ActiveRecord::Schema.define(:version => 20121120232427) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "photos", :force => true do |t|
+    t.string   "caption"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "image"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "username"
     t.string   "email"
