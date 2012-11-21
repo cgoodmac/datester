@@ -10,7 +10,7 @@ Datester::Application.routes.draw do
   resources :dashboard
 
   match '/login' => 'session#new', :via => :get
-  match '/login' => 'session#create', :via => :post
+  match '/root' => 'session#create', :via => :post
   match '/logout' => 'session#destroy', :via => :get
 
 

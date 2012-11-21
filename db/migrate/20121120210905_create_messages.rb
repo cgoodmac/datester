@@ -1,8 +1,8 @@
 class CreateMessages < ActiveRecord::Migration
   def change
     create_table :messages do |t|
-      t.string :sender
-      t.string :recipient
+      t.integer :sender
+      t.integer :recipient
       t.string :subject
       t.text :content
       t.timestamps

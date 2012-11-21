@@ -9,13 +9,20 @@
 <body>
 
 <nav>
-    <%= link_to "Home ", root_path %>
+    <%= show_dynamic_links %>
+
     <%= link_to "Users", users_path %>
     
     <%= link_to "Photos", photos_path %>
     <%= link_to "New Photo", new_photo_path %>
     <%= link_to "Messages", messages_path %>
     <%= link_to "New Message", new_message_path %>
+    <%= link_to "Questions", questions_path %>
+    <%= link_to "New Questions", new_question_path %>
+    <%= link_to "Answers", answers_path %>
+    <%= link_to "New Answers", new_question_path %>
+    <%= link_to "Dashboard", dashboard_index_path %>
+
 </nav>
 
 <%= yield %>
