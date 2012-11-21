@@ -13,5 +13,10 @@
      <%= f.text_field :caption %>
    </div>
 
+  <div class="field">
+    <%= check_box_tag(:main_image) %>
+    <%= label_tag(:main_image, "Make this your main picture") %>
+  </div>
+
    <div class="submit"><%= f.submit %></div>
 <% end %>
