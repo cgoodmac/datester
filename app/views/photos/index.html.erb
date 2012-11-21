@@ -8,6 +8,10 @@
       <div class="caption">
         <p><%= photo.caption %></p>
       </div>
+      <%= form_tag '/primary' do %>
+        <%= hidden_field_tag 'id', photo.id %>
+        <%= submit_tag "Make primary" if !photo.is_primary %>
+      <% end %>
     </div>
   <% end %>
 </ul>
