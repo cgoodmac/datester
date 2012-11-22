@@ -12,6 +12,10 @@ Datester::Application.routes.draw do
   match '/login' => 'session#new', :via => :get
   match '/root' => 'session#create', :via => :post
   match '/logout' => 'session#destroy', :via => :get
+
+  match '/search' => 'search#index', :via => :get
+  #match '/search' => 'search#show', :via => :get
+
   post '/primary' => 'photos#primary'
 
   # The priority is based upon order of creation:
