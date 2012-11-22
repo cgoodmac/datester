@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
 	def index
-		@photos = Photo.all
+		@photos = Photo.where(:user_id => @auth)
 	end
 
 	def show

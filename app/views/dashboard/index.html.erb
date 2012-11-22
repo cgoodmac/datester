@@ -3,7 +3,7 @@ This is the dasboard page.  It should be personal to each person.
 <% if @auth %>
   <div>Welcome <%= @auth[:username] %></div>
 
-  <div>Photo: <%= image_tag @auth[:photo_id] %></div>
+  <div>Photo: <%= image_tag @auth.photos.where(:is_primary => true).first.thumb_image_url %></div>
   <div>Email: <%= @auth[:email] %></div>
   <div>Age <%= @auth[:age] %></div>
   <div>Gender <%= @auth[:gender] %></div>
