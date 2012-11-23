@@ -1,4 +1,4 @@
-<h1>the current user is : <%= @authenticated_user.try(:username) %></h1>
+<h1>the current user is : <%= @auth.try(:username) %></h1>
 
 Index
 <% @users.each do |user| %>

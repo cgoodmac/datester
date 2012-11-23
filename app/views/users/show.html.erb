@@ -1,1 +1,13 @@
-<h1>user</h1>
+<h1><%= @user.username %></h1>
+
+<% if @user.photos.where(:is_primary => true).any? %>
+  <div>Photo: <%= image_tag @user.photos.where(:is_primary => true).first.image.thumb.url %></div>
+<% else %>
+  <div>No primary photo set.</div>
+<% end %>
+<div>Email: <%= @user[:email] %></div>
+<div>Age <%= @user[:age] %></div>
+<div>Gender <%= @user[:gender] %></div>
+<div>City <%= @user[:city] %></div>
+<div>State: <%= @user[:state] %></div>
+<div>Description: <%= @user[:description] %></div>
