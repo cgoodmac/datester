@@ -7,5 +7,10 @@
 <% end %>
 
 <% @users.each do |user| %>
+  <% if user.photos.where(:is_primary => true).any? %>
+    <div><%= image_tag user.photos.where(:is_primary => true).first.image.thumb.url %></div>
+  <% else %> 
+    <div>No avatar</div>
+  <% end %>
   <div><%= user.username %></div>
 <% end %>
