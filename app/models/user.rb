@@ -20,10 +20,10 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-  has_many :received, :class_name => 'Message', :foreign_key => 'recipient'
   has_many :photos
   has_many :questions
-  has_many :messages
+  has_many :messages, :class_name => 'Message', :foreign_key => 'recipient'
+  
   has_many :intiated, :class_name => 'Match', :foreign_key => 'sender_id'
   has_many :received, :class_name => 'Match', :foreign_key => 'receiver_id'
 

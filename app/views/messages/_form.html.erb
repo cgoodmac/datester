@@ -3,7 +3,7 @@
   <div class="field">
     <div>
       <%= f.label :sender %>
-      <%= f.text_field :sender %>
+      <%= f.text_field :sender, :value => @auth[:id] %>
     </div>
 
     <div>
@@ -24,3 +24,9 @@
   <%= f.submit %>   
   </div><!-- .field -->
 <% end %>
+
+<div>Auth_id = <%= @auth[:id] %></div>
+ <% User.all.each do |user| %>
+    <div><%= user.username %>, ID: <%= user[:id] %> </div>
+    
+  <% end %>

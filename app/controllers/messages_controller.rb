@@ -14,12 +14,16 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(params[:message])
     if @message.save
-      redirect_to messages_path #MAYBE later this will redirect somewhere else
+      redirect_to dashboard_index_path
     else
       render :new
     end
   end
 
-  
+  def destroy
+    message = Message.find(params[:id])
+    message.delete
+    redirect_to dashboard_index_path
+  end
   
 end

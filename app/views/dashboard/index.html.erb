@@ -12,12 +12,14 @@ This is the dasboard page.  It should be personal to each person.
   <div>Description: <%= @auth[:description] %></div>
 
   <div>Messages:</div>
-  <% if @auth.received.any? %>
-    <%= @auth.received %>
+  <% if @auth.messages.any? %>
+    <% @auth.messages.each do |message| %>
+      <div><%= link_to message.subject, message_path(message) %></div>
+    <% end %>
   <% else %>
     <div>You have no new messages<div>
   <% end %>
-
+  <div><%= link_to 'Send a new message', new_message_path %></div>
   <div><%= link_to 'Search for new dates', search_path %></div>
 
   <div class="photo1">
