@@ -2,13 +2,17 @@
 
   <div class="field">
     <div>
-      <%= f.label :sender %>
-      <%= f.text_field :sender, :value => @auth[:id] %>
+      <%#= f.label :sender %>
+      <%= f.hidden_field :sender, :value => @auth[:id], :readonly => true %>
     </div>
 
     <div>
-      <%= f.label :recipient %>
-      <%= f.text_field :recipient %>
+      <%#= f.label :recipient %>
+      <%= f.hidden_field :recipient, :value => @recipient, :readonly => true %>
+    </div>
+
+    <div>
+      New message to: <%= User.find_by_id(@recipient).username %>
     </div>
 
     <div>
@@ -24,9 +28,3 @@
   <%= f.submit %>   
   </div><!-- .field -->
 <% end %>
-
-<div>Auth_id = <%= @auth[:id] %></div>
- <% User.all.each do |user| %>
-    <div><%= user.username %>, ID: <%= user[:id] %> </div>
-    
-  <% end %>

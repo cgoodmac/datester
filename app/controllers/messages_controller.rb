@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
   end
 
   def new
+    @recipient = params[:format]
     @message = Message.new
   end
 

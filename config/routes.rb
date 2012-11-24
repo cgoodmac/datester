@@ -14,7 +14,6 @@ Datester::Application.routes.draw do
   match '/logout' => 'session#destroy', :via => :get
   match '/session' => 'session#create', :via => :post
   match '/search' => 'search#index', :via => :get
-  match '/search_results' => 'search#show', :via => :get
   post '/primary' => 'photos#primary'
 
   # NOTES
