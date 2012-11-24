@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121121210019) do
+ActiveRecord::Schema.define(:version => 20121124011411) do
+
+  create_table "answers", :force => true do |t|
+    t.string   "answer_text"
+    t.integer  "question_id"
+    t.string   "is_correct"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "matches", :force => true do |t|
     t.boolean  "matched"
@@ -40,9 +48,10 @@ ActiveRecord::Schema.define(:version => 20121121210019) do
   end
 
   create_table "questions", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.integer  "user_id"
+    t.string   "question_text"
   end
 
   create_table "users", :force => true do |t|

@@ -1,0 +1,8 @@
+<h1><%= @auth.username %>'s questions</h1>
+<ul class="list">
+  <% @questions.each do |question| %>
+    <div class="question">
+      <%= link_to question.question_text, question  %>
+    </div>
+  <% end %>
+</ul>

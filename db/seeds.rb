@@ -8,6 +8,8 @@
 
 User.delete_all
 Photo.delete_all
+Question.delete_all
+Answer.delete_all
 
 u1 = User.create(:username => "chris", :password => "1", :password_confirmation => "1", :age => 30, :gender => "male", :city => "New York", :state => "NY", :ethnicity => "Mixed", :description => "Average")
 u2 = User.create(:username => "sally", :password => "2", :password_confirmation => "2", :age => 35, :gender => "female", :city => "Boston", :state => "MA", :ethnicity => "Jewish", :description => "Above average")
