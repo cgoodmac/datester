@@ -1,0 +1,24 @@
+input[type="text"] {
+  width: 300px;
+}
+
+input[type="password"] {
+  width: 300px;
+}
+
+input[type="number"] {
+  width: 80px;
+}
+
+#new_question {
+
+  input[type="text"] {
+    float: left;
+  }
+
+  input[type="checkbox"] {
+    float: left;
+  }
+
+
+}

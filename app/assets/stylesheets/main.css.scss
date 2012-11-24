@@ -1,0 +1,14 @@
+#container {
+  width: 960px;
+  margin: auto;
+}
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#answers {
+  margin-top: 10px;
+}

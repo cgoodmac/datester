@@ -8,24 +8,43 @@
 </head>
 <body>
 
-<nav>
-    <%= show_dynamic_links %>
+  <div id="container">
 
-    <%= link_to "Users", users_path %>
-    
-    <%= link_to "Photos", photos_path %>
-    <%= link_to "New Photo", new_photo_path %>
-    <%= link_to "Messages", messages_path %>
-    <%= link_to "New Message", new_message_path %>
-    <%= link_to "Questions", questions_path %>
-    <%= link_to "New Questions", new_question_path %>
-    <%= link_to "Answers", answers_path %>
-    <%= link_to "New Answers", new_question_path %>
-    <%= link_to "Dashboard", dashboard_index_path %>
+    <header>
+      
+    </header>
 
-</nav>
+    <nav class="top-bar">
+      <ul>
+        <li class="name"><h1><a href="/">Datester</a></h1></li>
+        <li class="toggle-topbar"><a href="#"></a></li>
+      </ul>
+        <section>
+          <ul class="left">
+            <li><%= dynamic_photos_links %></li>
+<!--             <li><%= link_to "Messages", messages_path %></li>
+            <li><%= link_to "New Message", new_message_path %></li> -->
+            <li><%= link_to "Questions", questions_path %></li>
+            <li><%= link_to "New Questions", new_question_path %></li>
+            <li><%= link_to "Answers", answers_path %></li>
+            <li><%= link_to "New Answers", new_question_path %></li>
+            <li><%= dynamic_search_links %></li>
+          </ul>
 
-<%= yield %>
+          <ul class="right">
+            <li><%= dynamic_dashboard_links %></li>
+            <li><%= dynamic_login_links %></li>
+          </ul>
+        </section>
+    </nav>
+
+    <%= yield %>
+
+    <footer>
+
+    </footer>
+
+  </div><!-- end container -->
 
 </body>
 </html>

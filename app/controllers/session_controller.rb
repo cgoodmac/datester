@@ -1,5 +1,9 @@
 class SessionController < ApplicationController
     def new
+        if @auth
+            redirect_to dashboard_index_path # (@auth)
+        else
+        end
     end
 
     def create

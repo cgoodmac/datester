@@ -6,6 +6,7 @@
   <%= submit_tag "Search" %>
 <% end %>
 
+
 <% if @results %>
   <% @results.each do |result| %>
     <div><%= result.username %></div>
@@ -19,3 +20,19 @@
     <!-- Add a link_To that sends the user id so that will be the recipient-->
   <% end %>
 <% end %>
+
+<div class="search_results clearfix">
+  <% @results.each do |result| %>
+    <%= link_to result do %>
+      <div class="th result_pill">
+        <% if result.photos.where(:is_primary => true).any? %>
+          <div><%= image_tag result.photos.where(:is_primary => true).first.image.thumb.url %></div>
+        <% else %> 
+          <div>No avatar</div>
+        <% end %>
+        <p class="username"><%= result.username %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
