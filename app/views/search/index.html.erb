@@ -1,14 +1,27 @@
 <h1>Search Page</h1>
 
 <%= form_tag search_path, :method => 'get' do %>
-
   <%= text_field_tag :search, params[:search] %>
+  <%= radio_button_tag 'gender', 'male', true %>male
+  <%= radio_button_tag 'gender', 'female' %>female
   <%= submit_tag "Search" %>
 <% end %>
 
   
 <% if @results %>
   <% @results.each do |result| %>
+
+    <%= link_to result do %>
+      <div class="th result_pill">
+        <% if result.photos.where(:is_primary => true).any? %>
+          <div><%= image_tag result.photos.where(:is_primary => true).first.image.thumb.url %></div>
+        <% else %>
+          <div>No avatar</div>
+        <% end %>
+        <p class="username"><%= result.username %></p>
+      </div>
+    <% end %>
+
     <div><%= result.username %></div>
     <div><%= result.age %></div>
     <div><%= result.gender %></div>
@@ -16,23 +29,11 @@
     <div><%= result.state %></div>
     <div><%= result.description %></div>
     <div><%= result[:id] %></div>
-    <div><%= link_to "Send a new message", new_message_path(result[:id]) %></div>s
+    <div><%= link_to "Send a new message", new_message_path(result[:id]) %></div>
     <!-- Add a link_To that sends the user id so that will be the recipient-->
   <% end %>
+  <% else %>
+    <div> Enter your search terms here </div>
 <% end %>
 
-<div class="search_results clearfix">
-  <% @results.each do |result| %>
-    <%= link_to result do %>
-      <div class="th result_pill">
-        <% if result.photos.where(:is_primary => true).any? %>
-          <div><%= image_tag result.photos.where(:is_primary => true).first.image.thumb.url %></div>
-        <% else %> 
-          <div>No avatar</div>
-        <% end %>
-        <p class="username"><%= result.username %></p>
-      </div>
-    <% end %>
-  <% end %>
-</div>
 

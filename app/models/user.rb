@@ -38,12 +38,12 @@ class User < ActiveRecord::Base
   # validates :ethnicity, :presence => true
   # validates :description, :presence => true
 
-  def self.search(search)
-  if search
-    find(:all, :conditions => ['username like ? or city like ? or state like ? or gender like ? or description like ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"])
-  else
-    nil
+  def self.search(search, gender)
+    if search
+      find(:all, :conditions => ["lower(username) like ? or lower(city) like ? or lower(state) like ? or lower(description) like ? and gender=?", search.downcase, search.downcase, search.downcase, search.downcase, gender])
+      
+    else
+      nil
+    end
   end
-end
-
 end
