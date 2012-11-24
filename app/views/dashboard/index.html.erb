@@ -1,22 +1,17 @@
-This is the dasboard page.  It should be personal to each person.
-
 <% if @auth %>
   <div>Welcome <%= @auth[:username] %></div>
 
-  <div>Photo: <%= image_tag @auth[:photo_id] %></div>
+  <% if @auth.photos.where(:is_primary => true).any? %>
+    <div>Photo: <%= image_tag @auth.photos.where(:is_primary => true).first.image.thumb.url %></div>
+  <% else %>
+    <div>You haven't set a main photo yet. Upload some photos and pick a primary photo!</div>
+  <% end %>
   <div>Email: <%= @auth[:email] %></div>
   <div>Age <%= @auth[:age] %></div>
   <div>Gender <%= @auth[:gender] %></div>
   <div>City <%= @auth[:city] %></div>
   <div>State: <%= @auth[:state] %></div>
   <div>Description: <%= @auth[:description] %></div>
-
-  <div>Messages:</div>
-  <% if @auth.received.any? %>
-    <%= @auth.received %>
-  <% else %>
-    <div>You have no new messages<div>
-  <% end %>
 
   <div class="photo1">
     Add photos to your profile!

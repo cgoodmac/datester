@@ -20,10 +20,10 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-  has_many :received, :class_name => 'Message', :foreign_key => 'recipient'
   has_many :photos
   has_many :questions
-  has_many :messages
+  has_many :messages, :class_name => 'Message', :foreign_key => 'recipient'
+  
   has_many :intiated, :class_name => 'Match', :foreign_key => 'sender_id'
   has_many :received, :class_name => 'Match', :foreign_key => 'receiver_id'
 
@@ -38,6 +38,12 @@ class User < ActiveRecord::Base
   # validates :ethnicity, :presence => true
   # validates :description, :presence => true
 
+  def self.search(search)
+  if search
+    find(:all, :conditions => ['username like ? or city like ? or state like ? or gender like ? or description like ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"])
+  else
+    nil
+  end
+end
 
-  
 end

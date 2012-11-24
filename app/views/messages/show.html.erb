@@ -1,0 +1,8 @@
+<h1>message</h1>
+
+<div>From: <%= User.find(@message.sender).username %></div>
+<div>Subject: <%= @message.subject %></div>
+<div>Message</div>
+<div><%= @message.content %></div>
+
+<div><%= link_to 'Delete this message', @message, method: :delete, data: { confirm: 'Are you sure?' } %></div>

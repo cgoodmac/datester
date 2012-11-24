@@ -1,29 +1,25 @@
-<%= form_for(@question, :html => {:multipart => true}) do |f| %>
+<%= form_for @question do |f| %>
   <% if @question.errors.any? %>
-    <div id= "error_explanation">
-      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved: </h2>
+    <div id="error_explanation">
+      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this user from being saved:</h2>
 
       <ul>
-        <%= @question.errors.full_messages.each do |msg| %>
+      <% @question.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
-      <%= end %>
+      <% end %>
       </ul>
     </div>
-  <%end %>
-
-  <div class "field">
-    <%= f.label :question %><br/>
-    <%= f.text_field :question %>
-  </div>
-
-  <div class "field">
-    <%= f.label :answer %><br/>
-    <%= f.text_field :answer %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
   <% end %>
 
-
-
+  <div class='field group'>
+    <%= label_tag :question %>
+    <%= f.text_field :question_text %>
+  </div>
+  <div class='field'>
+    <input type="button" id="add_answer" value="Add Answer" />
+  </div>
+  <div id='answers'></div>
+  <div class='field'>
+    <%= f.submit %>
+  </div>
+<% end %>

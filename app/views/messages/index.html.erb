@@ -1,6 +1,9 @@
 <% @messages.each do |message| %>
-  <div>From: <%= message.sender %></div>
+  <div>Sender: <%= message.sender %></div>
+  <div>Recipient: <%= message.recipient %>
   <div>Subject: <%= message.subject %></div>
   <div>Message:</div>
   <div><%= message.content %></div>
+  <div><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></div>
 <% end %>
+

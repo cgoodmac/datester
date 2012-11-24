@@ -1,16 +1,33 @@
-<h1>Home Page</h1>
+<h1>Welcome to Datester!</h1>
 
-<%= form_tag '/root' do %>
-    name:
-    <%= text_field_tag 'username' %>
-    pass:
-    <%= password_field_tag 'password' %>
-    <%= submit_tag 'Login!' %>
-<% end %>
+<div class="row">
+  <div class="six columns">
+    <div class="panel">
+      <%= form_tag '/session' do %>
+        <%= label_tag 'Username' %>
+        <%= text_field_tag 'username' %>
+        <%= label_tag 'Password' %>
+        <%= password_field_tag 'password' %>
+        <%= submit_tag 'Login!' %>
+      <% end %>
+    </div>
+  </div>
+  <div class="six columns">
+    <div class="panel callout radius">
+      OR <%= link_to "Register", new_user_path %>
+    </div>
+  </div>
+</div>
 
 
 
 
-OR <%= link_to "Register", new_user_path %>
+
+
+
+
+
+
+
 
 
