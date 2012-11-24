@@ -9,20 +9,21 @@ Datester::Application.routes.draw do
   resources :answers
   resources :dashboard
 
-  # match '/message' => 'message#new'
+  
   match '/login' => 'session#new', :via => :get
-
-  # constraints(@auth != nil) do
-    root :to => "dashboard#index"
-  # end
-
-  match '/root' => 'session#create', :via => :post
   match '/logout' => 'session#destroy', :via => :get
+  root :to => "session#new"
 
+  match '/session' => 'session#create', :via => :post
   match '/search' => 'search#index', :via => :get
-  #match '/search' => 'search#show', :via => :get
 
   post '/primary' => 'photos#primary'
+
+  # NOTES
+  # match '/message' => 'message#new'
+  # match '/search' => 'search#show', :via => :get
+  # 
+  # root :to => 'session#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -73,7 +74,7 @@ Datester::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'session#new'
+  
 
   # See how all your routes lay out with "rake routes"
 
