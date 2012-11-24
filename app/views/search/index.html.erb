@@ -1,11 +1,21 @@
 <h1>Search Page</h1>
 
-<%= form_tag("/search", :method => "get") do %>
-  <%= label_tag(:search, "Search for:") %>
-  <%= text_field_tag(:search) %>
-  <%= submit_tag("Search") %>
+<%= form_tag search_path, :method => 'get' do %>
+
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search" %>
 <% end %>
 
-<% @users.each do |user| %>
-  <div><%= user.username %></div>
+<% if @results %>
+  <% @results.each do |result| %>
+    <div><%= result.username %></div>
+    <div><%= result.age %></div>
+    <div><%= result.gender %></div>
+    <div><%= result.city %></div>
+    <div><%= result.state %></div>
+    <div><%= result.description %></div>
+    <div><%= result[:id] %></div>
+    <div><%= link_to "Send a new message", new_message_path(result[:id]) %></div>s
+    <!-- Add a link_To that sends the user id so that will be the recipient-->
+  <% end %>
 <% end %>

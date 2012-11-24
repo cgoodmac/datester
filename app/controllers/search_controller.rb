@@ -1,17 +1,14 @@
 class SearchController < ApplicationController
   def index
-    @users = User.search(params[:search])
-    # if @user.save
-    #     redirect_to edit_user_path(@user)
-    #   else
-    #     render :new
-    #   end
-    # redirect_to search_path(@user)
+    @results = User.search(params[:search])
+
+    # if results.save
+    #   redirect_to dashboard_index_path
+    # else
+    #   render :index
+    # end
   end
 
-  def show
-    @users
-  end
 
 end
 

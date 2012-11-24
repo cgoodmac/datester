@@ -40,9 +40,9 @@ class User < ActiveRecord::Base
 
   def self.search(search)
   if search
-    find(:all, :conditions => ['username like ?', "%#{search}%"])
+    find(:all, :conditions => ['username like ? or city like ? or state like ? or gender like ? or description like ?', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"])
   else
-    find(:all)
+    nil
   end
 end
 

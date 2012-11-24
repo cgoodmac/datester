@@ -12,6 +12,7 @@ class MessagesController < ApplicationController
   end
 
   def create
+    
     @message = Message.new(params[:message])
     if @message.save
       redirect_to dashboard_index_path
