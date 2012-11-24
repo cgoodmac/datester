@@ -11,6 +11,11 @@ Datester::Application.routes.draw do
 
   # match '/message' => 'message#new'
   match '/login' => 'session#new', :via => :get
+
+  # constraints(@auth != nil) do
+    root :to => "dashboard#index"
+  # end
+
   match '/root' => 'session#create', :via => :post
   match '/logout' => 'session#destroy', :via => :get
 

@@ -6,15 +6,17 @@
   <%= submit_tag("Search") %>
 <% end %>
 
-<% @users.each do |user| %>
-  <%= link_to user do %>
-    <div class="user_pill">
-      <% if user.photos.where(:is_primary => true).any? %>
-        <div><%= image_tag user.photos.where(:is_primary => true).first.image.thumb.url %></div>
-      <% else %> 
-        <div>No avatar</div>
-      <% end %>
-      <div><%= user.username %></div>
-    </div>
+<div class="search_results clearfix">
+  <% @users.each do |user| %>
+    <%= link_to user do %>
+      <div class="th user_pill">
+        <% if user.photos.where(:is_primary => true).any? %>
+          <div><%= image_tag user.photos.where(:is_primary => true).first.image.thumb.url %></div>
+        <% else %> 
+          <div>No avatar</div>
+        <% end %>
+        <p class="username"><%= user.username %></p>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
