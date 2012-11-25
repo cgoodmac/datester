@@ -22,6 +22,10 @@ class MessagesController < ApplicationController
     end
   end
 
+  def check
+
+  end
+
   def destroy
     message = Message.find(params[:id])
     message.delete
