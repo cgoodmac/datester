@@ -18,12 +18,13 @@ class MatchesController < ApplicationController
     select = params[:select]
 
     if select == correct
-      m = Match.create(:matched => true, :receiver_id => params[:receiver_id], :sender_id => params[:sender_id])
+      mt = Match.create(:matched => true, :receiver_id => params[:receiver_id], :sender_id => params[:sender_id])
 
       redirect_to new_message_path(params[:receiver_id])
     else
-      
-      m = Match.create(:matched => false, :receiver_id => params[:receiver_id], :sender_id => params[:sender_id])
+
+      mf = Match.create(:receiver_id => params[:receiver_id], :sender_id => params[:sender_id], :matched => false)
+
       redirect_to matches_failure_path
     end
   end
