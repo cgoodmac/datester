@@ -20,6 +20,18 @@
 
   <div><%= link_to "Search for new dates", search_path %></div>
 
+  <% if @messages %><!-- If you have a message sent to you. I.e., in your inbox -->
+    <% @messages.each do |message| %>
+      <div>Message from: <%= User.find_by_id(message.sender).username %></div>
+      <div>Subject: <%= message.subject %>
+      <div>Message:</div>
+      <div><%= message.content %>
+    <% end %> 
+  
+  <% else %><!-- If you do not have any messages in your inbox -->
+    <div>You have no new messages </div>
+  <% end %>
+
 <% else %> <!-- This is what happens if you are not logged in to a session -->
 
 <div>Not logged in</div>
