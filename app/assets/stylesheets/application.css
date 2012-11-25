@@ -14,5 +14,6 @@
  *= require 'user_lists'
  *= require 'forms'
  *= require 'main'
+ *= require 'dashboard'
  *= require_tree .
  */

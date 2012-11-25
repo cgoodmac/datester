@@ -11,9 +11,6 @@ class MatchesController < ApplicationController
 
   def grade
 
-    #@receiver_id = Question.find(params[:question_id]).user_id
-    #@sender_id = @auth[:id]
-
     correct = Answer.where(:question_id => params[:question_id], :is_correct => "on").first.answer_text
     select = params[:select]
    
