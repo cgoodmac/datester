@@ -10,16 +10,26 @@ class MatchesController < ApplicationController
   end
 
   def grade
+
     correct = Answer.where(:question_id => params[:question_id], :is_correct => "on").first.answer_text
     select = params[:select]
 
     if select == correct
-      @attempt = "success"
-    else
-      @attempt = "failure"
+      m = Match.create(:matched => true, :receiver_id => params[:receiver_id], :sender_id => params[:sender_id])
 
-      redirect_to dashboard_index_path
+      redirect_to new_message_path(params[:receiver_id])
+    else
+
+      mf = Match.create(:receiver_id => params[:receiver_id], :sender_id => params[:sender_id], :matched => false)
+
+      redirect_to matches_failure_path
     end
+  end
+
+  def failure
+  end
+
+  def show
   end
 
 end

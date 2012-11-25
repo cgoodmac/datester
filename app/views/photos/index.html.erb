@@ -12,7 +12,8 @@
         <%= hidden_field_tag 'id', photo.id %>
         <%= submit_tag "Make primary" if !photo.is_primary %>
       <% end %>
-      
+      <%= link_to 'Edit', edit_photo_path(photo) %>
+      <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
   <% end %>
 </ul>
