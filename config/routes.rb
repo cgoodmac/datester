@@ -17,7 +17,7 @@ Datester::Application.routes.draw do
   post '/primary' => 'photos#primary'
   post '/matches/quiz' => 'matches#quiz'
   post '/matches/grade' => 'matches#grade'
-  match '/matches/failure' => 'matches#failure', :via => :get
+  match '/matches/failure' => 'matches#failure'
 
   # NOTES
   # match '/message' => 'message#new'

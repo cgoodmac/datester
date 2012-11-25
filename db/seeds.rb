@@ -10,6 +10,7 @@ User.delete_all
 Photo.delete_all
 Question.delete_all
 Answer.delete_all
+Match.delete_all
 
 # users
 u1 = User.create(:username => "chris", :password => "1", :password_confirmation => "1", :age => 30, :gender => "male", :city => "New York", :state => "NY", :ethnicity => "Mixed", :description => "Average")
