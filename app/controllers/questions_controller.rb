@@ -32,6 +32,12 @@ class QuestionsController < ApplicationController
   def update
     @question = Question.find(params[:id])
 
+    answers = params[:answers].map do |answer_hash|
+       Answer.create(answer_hash)
+    end
+
+    @question.answers = answers
+
     if @question.update_attributes(params[:question])
       redirect_to @question
     else
