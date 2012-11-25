@@ -1,3 +1,4 @@
+
 <% if @auth %>
   <div>Welcome <%= @auth[:username] %></div>
   <br>  
@@ -48,7 +49,10 @@
 
       <% else %> <!-- This is what happens if you are not logged in to a session -->
 
+
+<% end %>
         <div>Not logged in</div>
       <% end %>
     </div>
 </div>
+
