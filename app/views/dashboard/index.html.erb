@@ -15,7 +15,7 @@
 
   <div class="photo1">
     Add photos to your profile!
-    <%= link_to "New Photo", new_photo_path %>
+    <%= link_to "Add photo to your profile", new_photo_path %>
   </div>
 
 
@@ -24,9 +24,9 @@
   <% if @messages %><!-- If you have a message sent to you. I.e., in your inbox -->
     <% @messages.each do |message| %>
       <div>Message from: <%= User.find_by_id(message.sender).username %></div>
-      <div>Subject: <%= message.subject %>
+      <div>Subject: <%= message.subject %></div>
       <div>Message:</div>
-      <div><%= message.content %>
+      <div><%= message.content %></div>
     <% end %> 
   
   <% else %><!-- If you do not have any messages in your inbox -->

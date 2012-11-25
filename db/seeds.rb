@@ -20,7 +20,7 @@ u3 = User.create(:username => "joe", :password => "3", :password_confirmation =>
 # primary photos
 p1 = Photo.create(:is_primary => true, :caption => "hi", :remote_image_url => "http://a0.twimg.com/profile_images/83126918/Guy_Bio_Photo_crop.jpg")
 p2 = Photo.create(:is_primary => true, :caption => "im a girl!", :remote_image_url => "http://a0.twimg.com/profile_images/2344348679/d7fhjj1t1mms16iq0m1p.jpeg")
-p3 = Photo.create(:is_primary => true, :caption => "im a guy!", :remote_image_url => "http://a0.twimg.com/profile_images/2273386672/au5agsoqq2ilquh9mjku.jpeg")
+p3 = Photo.create(:is_primary => true, :caption => "im a guy!", :remote_image_url => "http://a0.twimg.com/profile_images/2273386672/au5agsoqq2ilquh9mjku.jpeg") 
 
 # non-primary photos
 p4 = Photo.create(:is_primary => false, :caption => "well hello there", :remote_image_url => "http://ia.media-imdb.com/images/M/MV5BMTcxMzI4Nzc1OV5BMl5BanBnXkFtZTYwNzMwNDMz._V1._SX332_SY400_.jpg")
