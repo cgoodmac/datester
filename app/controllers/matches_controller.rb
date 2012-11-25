@@ -19,7 +19,8 @@ class MatchesController < ApplicationController
 
       redirect_to new_message_path(params[:receiver_id])
     else
-      m = Match.create(:receiver_id => params[:receiver_id], :sender_id => params[:sender_id], :matched => false)
+
+      mf = Match.create(:receiver_id => params[:receiver_id], :sender_id => params[:sender_id], :matched => false)
 
       redirect_to matches_failure_path
     end
