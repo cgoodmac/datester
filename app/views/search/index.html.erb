@@ -22,14 +22,12 @@
       </div>
     <% end %>
 
-    <div><%= result.username %></div>
-    <div><%= result.age %></div>
-    <div><%= result.gender %></div>
-    <div><%= result.city %></div>
-    <div><%= result.state %></div>
-    <div><%= result.description %></div>
-    <div><%= result[:id] %></div>
-    <div><%= link_to "Send a new message", new_message_path(result[:id]) %></div>
+    <div><%#= result.username %></div>
+    <div><%#= result.age %></div>
+    <div><%#= result.gender %></div>
+    <div><%#= result.city %></div>
+    <div><%#= result.state %></div>
+    <div><%#= result.description %></div>
     <!-- Add a link_To that sends the user id so that will be the recipient-->
   <% end %>
 <% end %>

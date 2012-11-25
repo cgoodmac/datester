@@ -12,7 +12,4 @@ j# == Schema Information
 
 class Match < ActiveRecord::Base
     belongs_to :user, :foreign_key => 'receiver_id'
-    validates :matched, :presence => true
-    validates :receiver_id, :presence => true
-    validates :sender_id, :presence => true
 end
