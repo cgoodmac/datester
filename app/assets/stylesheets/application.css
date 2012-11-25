@@ -11,9 +11,6 @@
  *= require 'reset'
  *= require_self
  *= require foundation_and_overrides
- *= require '_settings'
- *= require 'general_foundicons_ie7.scss'
- *= require 'general_foundicons.scss'
  *= require 'user_lists'
  *= require 'forms'
  *= require 'main'
