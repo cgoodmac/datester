@@ -1,0 +1,18 @@
+<h2><%= "You're trying to connect with #{@user.username}" %></h2>
+
+<h1><%= @question.question_text %></h1>
+
+<%= form_tag matches_grade_path do %>
+  <%= hidden_field_tag 'question_id', @question.id %>
+  <%= hidden_field_tag 'answers', @answers %>
+  <ul>
+    <% @answers.each do |answer| %>
+      <li>
+        <%= radio_button_tag 'select', answer.answer_text, false %> 
+        <%= answer.answer_text %>
+      </li>
+    <% end %>
+  </ul>
+
+  <%= submit_tag "Submit" %>
+<% end %>

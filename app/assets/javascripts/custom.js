@@ -15,7 +15,7 @@ function add_answer()
   field.append(box);
 
   cb = $('<input>');
-  cb.attr('type', 'checkbox');
+  cb.attr('type', 'radio');
   cb.attr('name', 'answers[][is_correct]')
   field.append(cb);
 
