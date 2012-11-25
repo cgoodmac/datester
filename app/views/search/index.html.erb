@@ -14,7 +14,7 @@
     <%= link_to result do %>
       <div class="th result_pill">
         <% if result.photos.where(:is_primary => true).any? %>
-          <div><%= image_tag result.photos.where(:is_primary => true).first.image.thumb.url %></div>
+          <div><%= image_tag result.photos.where(:is_primary => true).first.image.standard.url %></div>
         <% else %>
           <div>No avatar</div>
         <% end %>

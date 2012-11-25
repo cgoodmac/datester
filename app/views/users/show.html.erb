@@ -1,7 +1,7 @@
 <h1><%= @user.username %></h1>
 
 <% if @user.photos.where(:is_primary => true).any? %>
-  <div>Photo: <%= image_tag @user.photos.where(:is_primary => true).first.image.thumb.url %></div>
+  <div class="th"><%= image_tag @user.photos.where(:is_primary => true).first.image.standard.url %></div>
 <% else %>
   <div>No primary photo set.</div>
 <% end %>
@@ -12,4 +12,7 @@
 <div>State: <%= @user[:state] %></div>
 <div>Description: <%= @user[:description] %></div>
 
-<a class="round button" href="#">Get in touch with <%= @user.username %></a>
+<%= form_tag '/matches/quiz' do %>
+  <%= hidden_field_tag 'id', @user.id %>
+  <%= submit_tag "Get in touch with #{@user.username}", :class => "round button" %>
+<% end %>

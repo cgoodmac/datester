@@ -9,14 +9,14 @@ module ApplicationHelper
 
     def dynamic_photos_links
         if @auth
-            link_to "Photos", photos_path
+            render 'nav/photonav'
         else
         end
     end
 
     def dynamic_dashboard_links
         if @auth
-            link_to @auth.username, dashboard_index_path
+            link_to "Logged in as #{@auth.username}", dashboard_index_path
         else
         end
     end
@@ -24,6 +24,20 @@ module ApplicationHelper
     def dynamic_search_links
         if @auth
             link_to "Search", search_path
+        else
+        end
+    end
+
+    def dynamic_messages_links
+        if @auth
+            render 'nav/messagenav'
+        else
+        end
+    end
+
+    def dynamic_questions_links
+        if @auth
+            render 'nav/questionnav'
         else
         end
     end

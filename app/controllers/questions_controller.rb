@@ -16,18 +16,28 @@ class QuestionsController < ApplicationController
     q = Question.create(params[:question])
     @auth.questions << q
 
-    params[:answers].each do |answer|
-      a1 = Answer.create(params[:answer])
-      q.answers << a1
+    answers = params[:answers].map do |answer_hash|
+      Answer.create(answer_hash)
     end
+
+    q.answers = answers
 
     redirect_to questions_path
   end
 
   def edit
+    @question = Question.find(params[:id])
   end
 
   def update
+    @question = Question.find(params[:id])
+
+    if @question.update_attributes(params[:question])
+      redirect_to @question
+    else
+      render :edit 
+    end
+
   end
 
   def destroy

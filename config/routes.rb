@@ -15,7 +15,9 @@ Datester::Application.routes.draw do
   match '/session' => 'session#create', :via => :post
   match '/search' => 'search#index', :via => :get
   post '/primary' => 'photos#primary'
-
+  post '/matches/quiz' => 'matches#quiz'
+  post '/matches/grade' => 'matches#grade'
+  
   # NOTES
   # match '/message' => 'message#new'
   # match '/search' => 'search#show', :via => :get
