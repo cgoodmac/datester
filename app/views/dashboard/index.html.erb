@@ -1,6 +1,6 @@
 
 <% if @auth %>
-  <div>Welcome <%= @auth[:username] %></div>
+  <div><h1>Welcome <%= @auth[:username] %></h1></div>
   <br>  
   <br>
   
@@ -31,6 +31,10 @@
     <div class="button_field">
       <%= link_to "Search for new dates", search_path, :class => "button round" %>
     </div>
+
+    <div class="button_field">
+      <%= link_to "Edit your profile", edit_user_path(@auth), :class => "button round" %>
+    </div>
   </div>
 
   <div class="row">
@@ -53,5 +57,4 @@
         <div>Not logged in</div>
       <% end %>
     </div>
-</div>
-
+  </div>

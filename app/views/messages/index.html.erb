@@ -1,9 +1,14 @@
 <% @messages.each do |message| %>
-  <div>Sender: <%= message.sender %></div>
-  <div>Recipient: <%= message.recipient %>
-  <div>Subject: <%= message.subject %></div>
-  <div>Message:</div>
-  <div><%= message.content %></div>
-  <div><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+  <% if message.sender != @auth[:id] %>
+    <div>Sender: <%= User.find_by_id(message.sender).username %></div>
+    <div>Recipient: <%= User.find_by_id(message.recipient).username %></div>
+    <div>Subject: <%= message.subject %></div>
+    <div>Message:</div>
+    <div><%= message.content %></div>
+    <div>
+      <%= link_to 'Reply', new_message_path(message.sender) %>
+      <%= link_to 'Delete message', message, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+   <% end %>
 <% end %>
 

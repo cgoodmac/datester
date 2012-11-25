@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
   def index
-    @results = User.search(params[:search], params[:gender])
+    @results = User.search(params[:search])
   end
 end
 
