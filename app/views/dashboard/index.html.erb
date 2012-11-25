@@ -14,37 +14,41 @@
   
   <div class="two four columns">
   
-  <div class='info'><span class='label'>Email:</span>  <%= @auth[:email] %></div>
-  <div class='info'><span class='label'>Age:</span>  <%= @auth[:age] %></div>
-  <div class='info'><span class='label'>Gender:</span>  <%= @auth[:gender] %></div>
-  <div class='info'><span class='label'>City:</span>  <%= @auth[:city] %></div>
-  <div class='info'><span class='label'>State:</span>  <%= @auth[:state] %></div>
-  <div class='info'><span class='label'>Description:</span>  <%= @auth[:description] %></div>
+    <div class='info'><span class='label'>Email</span>  <%= @auth[:email] %></div>
+    <div class='info'><span class='label'>Age</span>  <%= @auth[:age] %></div>
+    <div class='info'><span class='label'>Gender</span>  <%= @auth[:gender] %></div>
+    <div class='info'><span class='label'>City</span>  <%= @auth[:city] %></div>
+    <div class='info'><span class='label'>State</span>  <%= @auth[:state] %></div>
+    <div class='info'><span class='label'>Description</span>  <%= @auth[:description] %></div>
   </div>
  
   <div class="three five columns">
-  <div class="photo1">
-    Add photos to your profile!
-    <%= link_to "New Photo", new_photo_path %>
+    <div class="button_field">
+      <%= link_to "Add photos", new_photo_path, :class => "button round" %>
+    </div>
+
+    <div class="button_field">
+      <%= link_to "Search for new dates", search_path, :class => "button round" %>
+    </div>
   </div>
 
-  <div><%= link_to "Search for new dates", search_path %></div>
-  </div>
+  <div class="row">
+    <div class="twelve columns">
+      <% if @messages %><!-- If you have a message sent to you. I.e., in your inbox -->
+        <% @messages.each do |message| %>
+          <div>Message from: <%= User.find_by_id(message.sender).username %></div>
+          <div>Subject: <%= message.subject %>
+          <div>Message:</div>
+          <div><%= message.content %>
+        <% end %> 
+      
+      <% else %><!-- If you do not have any messages in your inbox -->
+        <div>You have no new messages </div>
+      <% end %>
 
-  <% if @messages %><!-- If you have a message sent to you. I.e., in your inbox -->
-    <% @messages.each do |message| %>
-      <div>Message from: <%= User.find_by_id(message.sender).username %></div>
-      <div>Subject: <%= message.subject %>
-      <div>Message:</div>
-      <div><%= message.content %>
-    <% end %> 
-  
-  <% else %><!-- If you do not have any messages in your inbox -->
-    <div>You have no new messages </div>
-  <% end %>
+      <% else %> <!-- This is what happens if you are not logged in to a session -->
 
-<% else %> <!-- This is what happens if you are not logged in to a session -->
-
-<div>Not logged in</div>
-
-<% end %>
+        <div>Not logged in</div>
+      <% end %>
+    </div>
+</div>

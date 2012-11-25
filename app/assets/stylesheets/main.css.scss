@@ -1,32 +1,3 @@
- @font-face  {
-  font-family: 'GeneralFoundicons';
-  src: asset-url('general_foundicons.eot', font);
-  src: asset-url('general_foundicons.eot?#iefix', font) format('embedded-opentype'),
-       asset-url('general_foundicons.woff', font) format('woff'),
-       asset-url('general_foundicons.ttf', font) format('truetype'),
-       asset-url('general_foundicons.svg#[set]Foundicons', font) format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-[class*="foundicon-"] {
-  display: inline;
-  width: auto;
-  height: auto;
-  line-height: inherit;
-  vertical-align: baseline;
-  background-image: none;
-  background-position: 0 0;
-  background-repeat: repeat;
-}
-
-[class*="foundicon-"]:before {
-  font-family: "[set]Foundicons";
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: inherit;
-}
-
 #container {
   width: 960px;
   margin: auto;
@@ -41,6 +12,7 @@
 #answers {
   margin-top: 10px;
 }
+
 .top-bar {
     font-family: 'Play', sans-serif;
     a {
