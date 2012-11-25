@@ -1,18 +1,23 @@
 <h1><%= @user.username %></h1>
-
+<div class="one three columns">
 <% if @user.photos.where(:is_primary => true).any? %>
   <div class="th"><%= image_tag @user.photos.where(:is_primary => true).first.image.standard.url %></div>
 <% else %>
   <div>No primary photo set.</div>
 <% end %>
-<div>Email: <%= @user[:email] %></div>
-<div>Age <%= @user[:age] %></div>
-<div>Gender <%= @user[:gender] %></div>
-<div>City <%= @user[:city] %></div>
-<div>State: <%= @user[:state] %></div>
-<div>Description: <%= @user[:description] %></div>
+</div>
+<div class="two four columns">
+    <div class='info'><span class='label'>Email</span>  <%= @user[:email] %></div>
+    <div class='info'><span class='label'>Age</span>  <%= @user[:age] %></div>
+    <div class='info'><span class='label'>Gender</span>  <%= @user[:gender] %></div>
+    <div class='info'><span class='label'>City</span>  <%= @user[:city] %></div>
+    <div class='info'><span class='label'>State</span>  <%= @user[:state] %></div>
+    <div class='info'><span class='label'>Description</span>  <%= @user[:description] %></div>
+</div>
 
+<div class="three five columns">
 <%= form_tag '/matches/quiz' do %>
   <%= hidden_field_tag 'id', @user.id %>
   <%= submit_tag "Get in touch with #{@user.username}", :class => "round button" %>
 <% end %>
+</div>
