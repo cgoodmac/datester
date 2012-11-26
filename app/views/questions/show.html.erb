@@ -3,8 +3,7 @@
 <ul>
   <% @question.answers.each do |answer| %>
     <li><%= answer.answer_text %>
-      <% if answer.is_correct == "on" %>
-      Correct<% end %></li>
+      <% if answer.is_correct == "on" %> ✔<% end %></li>
   <% end %>
 </ul>
 
