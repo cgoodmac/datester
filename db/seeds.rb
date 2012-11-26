@@ -28,7 +28,7 @@ p4 = Photo.create(:is_primary => true, :caption => "im a girl!", :remote_image_u
 # non-primary photos
 p5 = Photo.create(:is_primary => false, :caption => "well hello there", :remote_image_url => "http://ia.media-imdb.com/images/M/MV5BMTcxMzI4Nzc1OV5BMl5BanBnXkFtZTYwNzMwNDMz._V1._SX332_SY400_.jpg")
 p6 = Photo.create(:is_primary => false, :caption => "here's another photo of me", :remote_image_url => "http://www.milwaukeemag.com/Media/Site/CommunityBlogs/129/MyImages/Kim-Kardashian-pic.jpg")
-p7 = Photo.create(:is_primary => false, :caption => "here's a photo", :remote_image_url => "http://www.asianpopcorn.com/battle_images/Lee_Hyori__17072009012112.jpg")
+p7 = Photo.create(:is_primary => false, :caption => "here's a photo", :remote_image_url => "http://www.allkpop.com/wp-content/uploads/2011/10/20111012_hyori_animalrightsseattle.jpg")
 
 # questions
 q1 = Question.create(:question_text => "Favorite music?")

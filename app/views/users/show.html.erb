@@ -28,7 +28,7 @@
       <h2><%= "#{@user.username}'s photos" %></h2>
       <% @user.photos.each do |photo| %>
         <div class="th user_pill">
-          <%= image_tag photo.image.standard.url %>
+          <%= image_tag photo.image.large.url %>
           <p class="caption"><%= photo.caption %></p>
         </div> 
        <% end %> 
