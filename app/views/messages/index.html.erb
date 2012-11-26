@@ -1,18 +1,22 @@
-<% @messages.each do |message| %>
-  <% if message.sender != @auth[:id] %>
-  <div class= " three2 three columns">
-    <div class="subject"><span class='label'>Sender</span>  <%= User.find_by_id(message.sender).username %></div>
-    <div class="subject"><span class='label'>Recipient</span>  <%= User.find_by_id(message.recipient).username %></div>
-    <div class="subject"><span class='label'>Subject</span>  <%= message.subject %></div>
-    <div class="subject"><span class='label'>Message</span>  <%= message.content %></div>
+<% if @messages.any? %>
+  <% @messages.each do |message| %>
+    <% if message.sender != @auth[:id] %>
+    <div class= " three2 three columns">
+      <div class="subject"><span class='label'>Sender</span>  <%= User.find_by_id(message.sender).username %></div>
+      <div class="subject"><span class='label'>Recipient</span>  <%= User.find_by_id(message.recipient).username %></div>
+      <div class="subject"><span class='label'>Subject</span>  <%= message.subject %></div>
+      <div class="subject"><span class='label'>Message</span>  <%= message.content %></div>
 
-    <div class="subject">
-      <%= link_to 'Reply', new_message_path(message.sender) %>
+      <div class="subject">
+        <%= link_to 'Reply', new_message_path(message.sender) %>
+      </div>
+      <div class="subject">
+        <%= link_to 'Delete message', message, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
     </div>
-    <div class="subject">
-      <%= link_to 'Delete message', message, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </div>
-  </div>
-   <% end %>
+     <% end %>
+  <% end %>
+<% else %>
+  <h1>You have no messages!</h1>
+  <div><%= link_to "Search for dates", search_path, :class => "button round" %></div>
 <% end %>
-

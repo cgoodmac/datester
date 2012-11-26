@@ -18,20 +18,18 @@ $font-import: 'Lobster';
 }
 
 .top-bar {
-    font-family: 'Play', sans-serif;
-    a {
-        font-family: 'Play', sans-serif;
-        
-    }
+
     ul .name h1 a {
       font-family: $font-import;
+      font-weight: 300;
       font-size: 30px !important;
+      text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
     }
 }
 .welcome {
   color: white;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 90px;
 }
 
 body.home {
@@ -48,4 +46,10 @@ prefixes", they are necessary to include for CSS3 techniques */
         -o-background-size: cover;
         background-size: cover;
 
+}
+
+#home-title {
+  font-family: $font-import;
+  font-weight: 300;
+  text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
 }

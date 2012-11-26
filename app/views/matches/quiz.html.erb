@@ -5,7 +5,7 @@
 <%# if Match.where(:sender_id=>@auth[:id], :receiver_id=>@user[:id]) == nil || Match.where(:sender_id=>@auth[:id], :receiver_id=>@user[:id]) != false %>
   <div><h1>Wrong answer.</h1>
   <div><h1>It wasn't meant to be.</h1></div>
-  <div><%= link_to "Search for more dates", search_path %>
+  <div><%= link_to "Search for other dates", search_path, :class => "button round" %></div>
 
 <% elsif m[0] == nil %>
   <h2><%= "You're trying to connect with #{@user.username}" %></h2>

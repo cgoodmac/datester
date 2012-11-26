@@ -3,7 +3,7 @@
 <% if @user.photos.where(:is_primary => true).any? %>
   <div class="th"><%= image_tag @user.photos.where(:is_primary => true).first.image.standard.url %></div>
 <% else %>
-  <div>No primary photo set.</div>
+  <div>No avatar set yet.</div>
 <% end %>
 </div>
 <div class="two four columns">
@@ -20,4 +20,19 @@
   <%= hidden_field_tag 'id', @user.id %>
   <%= submit_tag "Get in touch with #{@user.username}", :class => "round button" %>
 <% end %>
+</div>
+
+<div class="row">
+  <div class="twelve columns group">
+    <% if @user.photos.any? %>
+      <h2><%= "#{@user.username}'s photos" %></h2>
+      <% @user.photos.each do |photo| %>
+        <div class="th user_pill">
+          <%= image_tag photo.image.standard.url %>
+          <p class="caption"><%= photo.caption %></p>
+        </div> 
+       <% end %> 
+    <% else %>
+    <% end %>   
+  </div>
 </div>
