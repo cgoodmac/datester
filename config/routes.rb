@@ -8,6 +8,7 @@ Datester::Application.routes.draw do
   resources :questions
   resources :answers
   resources :dashboard
+  resources :game
 
   root :to => "session#new"
   match '/login' => 'session#new', :via => :get
